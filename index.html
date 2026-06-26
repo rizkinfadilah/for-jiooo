@@ -65,39 +65,39 @@
 <body>
 
     <div class="container">
-        <!-- -->
+        <!-- Kamu bisa ganti teks pertanyaannya di sini -->
         <h1 id="teks-pertanyaan">Jiooo, kamu sayang Dila gak? 🥺❤️</h1>
         
         <div class="btn-group">
-            <!-- -->
+            <!-- Tombol yang harus diklik -->
             <button id="btn-mau" onclick="pilihMau()">Sayang!</button>
             
-            <!-- -->
+            <!-- Tombol yang bakal kabur -->
             <button id="btn-gamau" onmouseover="kabur()" onclick="kabur()">Enggak</button>
         </div>
     </div>
 
     <script>
-        //
+        // Fungsi biar tombolnya kabur saat disentuh/didekati
         function kabur() {
             const btnGaMau = document.getElementById("btn-gamau");
             
-            //
+            // Mengacak posisi berdasarkan ukuran layar
             const x = Math.random() * (window.innerWidth - btnGaMau.offsetWidth - 50);
             const y = Math.random() * (window.innerHeight - btnGaMau.offsetHeight - 50);
             
-            // 
+            // Memindahkan tombol ke koordinat acak yang baru
             btnGaMau.style.position = "fixed";
             btnGaMau.style.left = x + "px";
             btnGaMau.style.top = y + "px";
         }
 
-        // 
+        // Fungsi saat dia akhirnya terpaksa klik tombol "Sayang!"
         function pilihMau() {
             const pertanyaan = document.getElementById("teks-pertanyaan");
             const btnGroup = document.querySelector(".btn-group");
             
-            // 
+            // Ubah teks judul dan sembunyikan tombolnya
             pertanyaan.innerHTML = "Yeayyy! I knew it! 🥰<br><br><span style='font-size: 16px; color: #555;'>Code successfully executed dengan penuh cinta!</span>";
             btnGroup.style.display = "none";
         }
