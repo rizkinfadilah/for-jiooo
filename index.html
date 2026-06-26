@@ -14,6 +14,7 @@
             justify-content: center;
             align-items: center;
             background-color: #ffe6e6;
+            overflow: hidden; 
         }
         .container {
             background: white;
@@ -25,81 +26,80 @@
         }
         h1 {
             color: #ff4d6d;
-            font-size: 22px;
-            margin-bottom: 20px;
+            font-size: 24px;
+            margin-bottom: 30px;
         }
-        input[type="password"] {
-            width: 80%;
-            padding: 12px;
-            font-size: 16px;
-            border: 2px solid #ff4d6d;
-            border-radius: 25px;
-            outline: none;
-            text-align: center;
-            margin-bottom: 20px;
+        .btn-group {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+            position: relative;
+            height: 50px;
         }
         button {
-            padding: 12px 30px;
+            padding: 12px 25px;
             font-size: 16px;
             font-weight: bold;
-            background-color: #ff4d6d;
-            color: white;
             border: none;
             border-radius: 25px;
             cursor: pointer;
             transition: 0.2s;
         }
-        button:hover {
-            background-color: #c9184a;
-            transform: scale(1.05);
+        #btn-mau {
+            background-color: #ff4d6d;
+            color: white;
         }
-        #pesan-eror {
-            color: #d90429;
-            font-size: 14px;
-            margin-top: 10px;
-            font-weight: bold;
+        #btn-mau:hover {
+            background-color: #c9184a;
+            transform: scale(1.1);
+        }
+        #btn-gamau {
+            background-color: #ccc;
+            color: #333;
+            position: absolute; 
+            left: 55%; 
         }
     </style>
 </head>
 <body>
 
     <div class="container">
-        <div id="box-login">
-            <h1>Eitss, jawab duluuu 🔐</h1>
-            <p style="font-size: 13px; color: #666;">Clue: Tanggal cantik kita</p>
+        <!-- -->
+        <h1 id="teks-pertanyaan">Jiooo, Jio sayang Dila gak? 🥺❤️</h1>
+        
+        <div class="btn-group">
+            <!-- -->
+            <button id="btn-mau" onclick="pilihMau()">Sayang donggg! Sayangku mahadahsyattt!!!!</button>
             
             <!-- -->
-            <input type="password" id="input-pass" placeholder="Apa cobaa?">
-            <br>
-            <button onclick="cekPassword()">Unlock 💖</button>
-            
-            <!-- -->
-            <div id="pesan-eror"></div>
-        </div>
-
-        <!-- Halaman Rahasia yang awalnya disembunyikan -->
-        <div id="halaman-rahasia" style="display: none;">
-            <h1>Widihhh!! Pintarnyaaa my Jiooo 🥰❤️</h1>
-            <p>Successfully decrypted dengan penuh cinta!</p>
-            <p style="font-size: 15px; color: #555;">Aku cuma mau bilang makasih ya Jiooo udah selalu sabar sama aku hehehe. Dila loves you!</p>
+            <button id="btn-gamau" onmouseover="kabur()" onclick="kabur()">Emohh ah emohhh</button>
         </div>
     </div>
 
     <script>
-        function cekPassword() {
-            const passwordUser = document.getElementById("input-pass").value;
-            const boxLogin = document.getElementById("box-login");
-            const halamanRahasia = document.getElementById("halaman-rahasia");
-            const pesanEror = document.getElementById("pesan-eror");
+        // 
+        function kabur() {
+            const btnGaMau = document.getElementById("btn-gamau");
+            
+            // 
+            const x = Math.random() * (window.innerWidth - btnGaMau.offsetWidth - 50);
+            const y = Math.random() * (window.innerHeight - btnGaMau.offsetHeight - 50);
+            
+            // 
+            btnGaMau.style.position = "fixed";
+            btnGaMau.style.left = x + "px";
+            btnGaMau.style.top = y + "px";
+        }
 
+        // 
+        function pilihMau() {
+            const pertanyaan = document.getElementById("teks-pertanyaan");
+            const btnGroup = document.querySelector(".btn-group");
+            
             // 
-            // 
-            if (passwordUser.toLowerCase() === "231123") {
-                boxLogin.style.display = "none"; // Sembunyikan kotak login
-                halamanRahasia.style.display = "block"; // Munculkan halaman rahasia
-            } else {
-                pesanEror.innerHTML = "❌ Net Not!!! Masa lupa lagi??";
-            }
+            pertanyaan.innerHTML = "Yeayyy! I knew it! Dila loves you too 🥰<br><br><span style='font-size: 16px; color: #555;'>Code successfully executed dengan penuh cinta!</span>";
+            btnGroup.style.display = "none";
         }
     </script>
 
