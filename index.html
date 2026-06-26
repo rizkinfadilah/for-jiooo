@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jioo's Little Appreciation</title>
+    <style>
+        /* Kita tambah css dikit biar tampilannya makin lucu */
+        body {
+            font-family: 'Courier New', Courier, monospace; /* Gaya font ala anak coding */
+            text-align: center;
+            padding-top: 50px;
+            background-color: #ffe6e6; /* Warna pink soft */
+            color: #333;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #ff4d6d;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #c9184a;
+        }
+        #pesan-rahasia {
+            margin-top: 20px;
+            font-weight: bold;
+            color: #ff4d6d;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Heiii Jiooo! 👋</h1>
+    <p>Ini dilaaaa lagi iseng belajar bikin web!.</p>
+
+    <!-- Tombol Iseng -->
+    <button onclick="munculkanPesan()">Klik Aku!</button>
+
+    <!-- Tempat pesan rahasia muncul -->
+    <div id="pesan-rahasia"></div>
+
+    <script>
+        // Ini JavaScript biar web kamu interaktif!
+        function munculkanPesan() {
+            document.getElementById("pesan-rahasia").innerHTML = "Gimana, code dila udah valid belum? 🤭 <br> Berhasil di-compile dengan penuh cinta!";
+        }
+    </script>
+
+</body>
+</html>
